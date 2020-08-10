@@ -1,0 +1,12 @@
+version: '3'
+services:
+  pas-man:
+    build: .
+    ports:
+    - "5830:5830"
+    depends_on:
+      - pas-man-mongo
+  pas-man-mongo:
+    image: "mongo:latest"
+    ports:
+    - "27017:27017"
